@@ -1,0 +1,39 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	height: 100vh;
+	width: 100vh;
+	
+
+}
+.container .login{
+	flex: 1;
+	height: 80vh;
+	background: rgb(236, 236, 234);
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: column;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+
+
+}
+.container .pic {
+	flex: 2;
+	background: url('../../assets/bakk.jpg');
+	background-size: cover;
+	height: 80vh;
+}
+.container .login .logo {
+	text-align: center;
+}
+.container .login .logo img{
+	height: 115px;
+	width: 100px;
+}
+
+

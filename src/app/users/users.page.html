@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Bookings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div class="container" padding>
+    <div class="wrapper">
+
+        <ion-item class="item item-trns" style="margin-bottom:10px;border-radius: 2px;background: rgba(255, 255, 255, 0.37)" *ngFor="let item of shoppingList$ | async">
+          <ion-avatar slot="start" >
+            <img src="../../assets/nobody.jpg">
+          </ion-avatar>
+          <ion-label padding-start>
+            <h2>{{item.name}}&nbsp;{{item.surname}}</h2>
+            <h3>{{item.roomtype}} of R{{item.total}}</h3>
+            <p><a>From: {{item.checkin}} to {{item.checkout}}</a></p>
+            <p><a>{{item.adults}} Adults & {{item.children}} Children</a></p>
+          </ion-label>
+        </ion-item>
+
+ 
+
+    </div>
+  </div>
+              <!-- <ion-avatar slot="start">
+                <img src="../../assets/nobody.jpg">
+              </ion-avatar>
+            
+                <ion-list>
+                <ion-item *ngFor = "let item of shoppingList$ | async"  align = "center">            -->
+        <!-- <b><pre>
+        Client:    {{item.name}}&nbsp;{{item.surname}}
+        Room-type: {{item.roomtype}}
+        Adults:    {{item.adults}}, Children:{{item.children}}
+        Check-in:  {{item.checkin}}
+        Check-out: {{item.checkout}}
+        Total Cost:R{{item.total}}
+               </pre></b> -->
+                      
+                         
+               
+               
+               
+               
+                <!-- </ion-item>
+               </ion-list> -->
+              
+               
+               
+               
+</ion-content>

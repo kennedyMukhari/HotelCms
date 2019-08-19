@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>User Profiles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item   align = "center"  style ="font-size:10px;font-family:sans-serif"> 
+
+     
+    
+    
+   
+ 
+    <div style="flex-grow: 8;position: sticky">
+      <ion-item *ngFor="let profile of prof$ | async" align="center" style="font-size:10px;font-family:sans-serif">
+        <button ion-button class="btn-add"(click)="takePhoto(0,profile)">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+        <button ion-button right (click)="upload()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        <figure align="center">
+          <img [src]="myphoto" *ngIf="myphoto" height="100px" width="100px">
+          <figcaption style="font-size:12px;font-family:sans-serif"> {{profile.firstname}} {{profile.lastname}}
+          </figcaption>
+        </figure>
+        <div style="background-color:rgba(0, 0, 0, 0.205);" align="left" style="font-size:10px;font-family:sans-serif">
+          <ion-item>
+            <h1 align="center" style="font-size:14px;font-family:sans-serif">Contacts</h1>
+          </ion-item>
+          <ion-row>
+            <ion-col align="center" style="font-size:12px;font-family:sans-serif">
+              Phone: {{profile.phone}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col align="center" style="font-size:12px;font-family:sans-serif">
+              Email: {{profile.email}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-item>
+              <h1 align="center" style="font-size:14px;font-family:sans-serif">Bio</h1>
+            </ion-item>
+            <ion-col align="center" style="font-size:12px;font-family:sans-serif">
+              {{profile.about}}
+            </ion-col>
+          </ion-row>
+          <button ion-button size="small" (click)="edit(profile)" style="float:right">
+            <ion-icon name="create" small></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+      <ion-list no-lines>
+      </ion-list>
+    </div>
+
+
+
+
+<ion-list>
+  <ion-item *ngFor = "let item of shoppingList$ | async"  align = "center">           
+<b><pre>
+Client:    {{item.name}}&nbsp;{{item.surname}}
+Room-type: {{item.roomtype}}
+Adults:    {{item.adults}}, Children:{{item.children}}
+Check-in:  {{item.checkin}}
+Check-out: {{item.checkout}}
+Total Cost:R{{item.total}}
+ </pre></b>
+           <button ion-button  (click) ="delete(item)" style ="background-color:rgba(255, 0, 0, 0.205)" item-end>
+               <ion-icon name = "ios-trash"></ion-icon>
+             </button>
+           
+ 
+ 
+ 
+ 
+  </ion-item>
+ </ion-list>
+
+</ion-item>
+
+</ion-content>
